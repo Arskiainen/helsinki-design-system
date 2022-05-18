@@ -47,7 +47,14 @@ export const NavigationRow = ({ variant = 'default', ariaLabel, children }: Navi
   });
 
   return (
-    <nav className={classNames(styles.navigation, variant === 'default' && styles.subNav)} aria-label={ariaLabel}>
+    <nav
+      className={classNames(
+        styles.navigation,
+        variant === 'default' && styles.subNav,
+        variant === 'inlineShelf' && styles.shelf,
+      )}
+      aria-label={ariaLabel}
+    >
       {childrenWithClassName}
     </nav>
   );
