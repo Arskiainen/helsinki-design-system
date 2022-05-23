@@ -33,6 +33,7 @@ export const NavigationRow = ({ variant = 'default', ariaLabel, children }: Navi
     const reactElement = child as React.ReactElement;
     const isActive = reactElement.props.active;
     const isDropdown = (reactElement.type as FCWithName).componentName === 'NavigationDropdown';
+    const isShelved = variant === 'inlineShelf';
 
     return isValidElement(child)
       ? cloneElement(child, {
@@ -40,6 +41,7 @@ export const NavigationRow = ({ variant = 'default', ariaLabel, children }: Navi
             !isDropdown && itemStyles.rowItem,
             isDropdown && itemStyles.dropdownItem,
             isActive && itemStyles.active,
+            isShelved && itemStyles.shelved,
             child.props.className || '',
           ),
         })
