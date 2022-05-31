@@ -431,12 +431,15 @@ export const Shelf = ({ ...args }) => {
         <Navigation.Item href="#" label="Link" onClick={(e) => e.preventDefault()} />
         <Navigation.Item href="#" label="Link" onClick={(e) => e.preventDefault()} />
         <Navigation.Item href="#" label="Link" onClick={(e) => e.preventDefault()} />
-        <Navigation.Dropdown label="Dropdown">
+        <Navigation.DropdownLink label="Dropdown" href="#">
           <Navigation.Item href="#" label="Link" onClick={(e) => e.preventDefault()} />
           <Navigation.Item href="#" label="Link" onClick={(e) => e.preventDefault()} />
           <Navigation.Item href="#" label="Link" onClick={(e) => e.preventDefault()} />
           <Navigation.Item href="#" label="Link" onClick={(e) => e.preventDefault()} />
-        </Navigation.Dropdown>
+        </Navigation.DropdownLink>
+        <Button size="small" key="navigation_button" iconRight={<IconArrowTopRight size="l" />}>
+          Oma-asionti
+        </Button>
       </Navigation.Row>
 
       {/* NAVIGATION ACTIONS */}
@@ -450,9 +453,6 @@ export const Shelf = ({ ...args }) => {
             <Navigation.Item href="#" hrefLang="und" label="Chinese" />
           </Navigation.Dropdown>
         </Navigation.Row>
-        <Button size="small" key="navigation_button" iconRight={<IconArrowTopRight size="l" />}>
-          Oma-asionti
-        </Button>
       </Navigation.Actions>
     </Navigation>
   );
